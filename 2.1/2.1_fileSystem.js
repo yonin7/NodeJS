@@ -1,8 +1,8 @@
 // import { copyFileSync, constants } from 'fs';
 
 const fs = require('fs');
-
-const folderPath = '../';
+console.log(__dirname);
+const folderPath = __dirname;
 fs.writeFileSync('file.txt', 'Hello world');
 fs.copyFileSync('file.txt', 'fileCopy.txt');
 fs.renameSync('file.txt', 'renamedFile.txt');
