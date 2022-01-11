@@ -24,14 +24,16 @@ request(url, { json: true }, (err, res, body) => {
   }
   console.log(body.items[0]);
 });
-axios
-  .get(url)
-  .then((response) => {
-    console.log(response.data.items[0]);
-  })
-  .catch((error) => {
+
+const getData = async () => {
+  try {
+    const res = await axios.get(url);
+    console.log(res.data.items[0]);
+  } catch (error) {
     console.log(error);
-  });
+  }
+};
+getData();
 
 got(url, { json: true })
   .then((response) => {
