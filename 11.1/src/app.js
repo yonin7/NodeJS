@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 
 // app.get('', (req, res) => {
 //   res.send('<h1>hello</h1>');
-// });
+// })
 app.get('/help', (req, res) => {
   res.send('help page');
 });
