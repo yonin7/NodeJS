@@ -20,6 +20,11 @@ const Shop = mongoose.model('shop', {
       type: String,
       required: true,
       minLength: 10,
+      validate(value) {
+        if (value < 10) {
+          throw new Error('min 10 characters');
+        }
+      },
     },
     Price: {
       type: Number,
