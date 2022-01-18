@@ -42,6 +42,11 @@ const Shop = mongoose.model('shop', {
     imgs: {
       type: Array,
       minItems: 2,
+      validate(value) {
+        if (value < 2) {
+          throw new Error('err!!!!');
+        }
+      },
     },
   },
 });
