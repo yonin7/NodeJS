@@ -10,7 +10,7 @@ const Shop = mongoose.model('shop', {
   name: {
     type: String,
     required: true,
-    trim: true,
+    unique: true,
   },
   isActive: {
     type: Boolean,
