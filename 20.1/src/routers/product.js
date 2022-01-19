@@ -22,9 +22,9 @@ router.get('/products', async (req, res) => {
   }
 });
 
-router.get('/actives', async (req, res) => {
+router.get('/products/actives', async (req, res) => {
   try {
-    const activProduct = await Product.find({ isActive: false });
+    const activProduct = await Product.find({ isActive: true });
     if (!activProduct) {
       return res.status(404).send();
     }
